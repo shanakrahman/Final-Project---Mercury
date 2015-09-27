@@ -5,47 +5,133 @@
     <title >Mercury</title>
     <link rel='stylesheet' href='styles/reset.css'>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel='stylesheet' href='styles/main.css'>
+   
 </head>
 <body>
+	<div id="shanak-styles">
+	<div id="content"> </div>
 
-	<div id="content"></div>
+		
 
 	<script id="signin" type="underscore/template">
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text"><%= name %></h2>
-		  </div>
-		</div>
+	<!-- This is the start of the sign in form -->
+	<div class ='form'>
+			<!-- This is the header of the sign in form -->
+			<div class="form__header">Sign In</div>
+			<!--This contains the enter email and password fields -->
+			<div class="form__login">
+				<div class="form-group">
+					<label for="usr">Enter Email:</label>
+					<input type="text" class="form-control" placeholder="Enter your email address" id="usr">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" placeholder="Enter your password" id="pwd">
+				</div>
+
+			</div>
+
+			<!-- This contains the sign up button and the new?register text link -->
+			<div class="form__submit clearfix">	
+				<div class = "form__signin__signinlink"><a href="#signup">Need an account? Register<a></div>
+				<button class = "btn-primary form__signin__button" > <a class="form--white" href="#user">Sign In<a></button>
+			</div>
+	 </div> <!--End of form -->
+
 	</script>
 
 	<script id="signup" type="underscore/template">
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">SIGNUP: <%= name %></h2>
-		  </div>
-		</div>
+		<!-- This is the start of the sign up form -->
+
+		<div class ='form'>
+			
+			<!-- This is the header of the sign up form -->
+			<div class="form__header">Register</div>
+			
+			<!--This contains the enter email and password fields -->
+			<div class="form__login">
+				<div class="form-group">
+					<label for="usr">Enter Email:</label>
+					<input type="text" class="form-control" placeholder="Enter your email address" id="usr">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" placeholder="Enter your password" id="pwd">
+				</div>
+				<!--<div class="form-group">
+					<label for="pwd">Re-enter Password:</label>
+					<input type="password" class="form-control" placeholder="Re-enter your password" id="pwd">
+				</div> -->
+			</div>
+				<!-- This contains the sign up button and the new?register text link -->
+			<div class="form__submit clearfix">	
+				<div class = "form__signin__signinlink"> <a href="#signin">Existing user? Sign in!<a></div>
+				<button class = "btn-primary form__signin__button"> <a class="form--white js-authenticate"href="#user">Register<a></button>
+			</div>
+		</div> <!--End of form -->
+
 	</script>
 
 	<script id="user" type="underscore/template">
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		<div class="content-column">
+			<div class="input-article form-group">
+				
+				<div class="input-group">
+					<label for="pwd">Enter your articles</label>
+					<input type="text" class="form-control js-article-title" placeholder="Re-enter your password" id="pwd">
+				</div> 
+				<br/>
+
+				<div class="input-group">
+					<label for="pwd">Enter your article URL</label>
+				  <input type="text" class="form-control js-article-url" placeholder="Enter your article's url" aria-describedby="basic-addon2">
+				</div>
+				<br/>
+
+				<div class="input-group">
+					<input type="submit" class="form-control js-add-article" value="Submit">
+				</div>
+
+			</div> 
+
+			<div class="js-card-holder"></div>
+
+			
+		<div>
+	</script>
+
+	<script id="card" type="underscore/template">
+		<div class="demo-card-wide mdl-card mdl-shadow--2dp custom-card-style">
 		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">USER: <%= name %>, ID: <%= id %></h2>
+		    <h2 class="mdl-card__title-text"><a href="<%= url %>" target="_blank"><%= title %></a></h2>
 		  </div>
 		</div>
 	</script>
-
-	<!-- MDL -->
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 
 	<!-- jQuery -->
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!--MDL-->
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+
+
     <!-- underscore -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     
+    <!-- firebase -->
+     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+     <script src="javascript/firebase-handler.js"></script>
+
+     <!-- CONFIGS -->
+     <script src="javascript/fireconfig.js"></script>
+
     <!-- ROUTING -->
     <script src="javascript/director.min.js"></script>
     <script src="javascript/routes.js"></script>
@@ -57,5 +143,6 @@
 
     <!-- APP -->
     <script src='javascript/main.js'></script>
+   </div>
 </body>
 </html>

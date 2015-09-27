@@ -7,7 +7,7 @@ Routes.list = {};
 Routes.register = function( route, fn ) {
     if ( typeof fn === "undefined" ) return;
 
-    Routes.list[ route ] = fn;
+    Routes.list[route]= fn;
 }
 
 Routes.init = function( defaultRoute ) {
@@ -21,6 +21,6 @@ Routes.getInstance = function() {
 
 Routes.setRoute = function( route ) {
     this.router.setRoute( route );
-} // wrapper on router.setRoute -- in case we ever switch to other router lib
+	} // wrapper on router.setRoute -- in case we ever switch to other router lib
 
 // module.exports = Routes;
