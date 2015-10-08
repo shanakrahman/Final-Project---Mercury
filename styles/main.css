@@ -1,0 +1,90 @@
+/* CURRENTLY IN: styles/main.css */
+
+body {
+    background-color: #E0DBDA;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+}
+
+/*CSS FOR SIGN IN AND SIGN UP FORMS */
+.form {
+    width: 400px;
+    margin: 0 auto;
+    background: white;
+    margin-top: 150px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.form--white{
+	color: white;
+}
+
+.form__header {
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	height:44px;
+	padding-top: 15px;
+}
+
+.form__login {
+	border:1px solid white;
+	width: 80%;
+	margin: 15px auto;
+	/*border-bottom: .5px solid grey;*/
+	border-bottom: 1px solid #d3d3d3;
+	
+}
+
+.form__submit {
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	
+}
+
+
+.form__signin__signinlink {
+	float: left;
+	margin: 10px 0px;
+}
+
+.form__signin__button {
+	float: right;
+	margin: 10px 0px;
+	
+}
+
+.btn-primary {}
+
+
+
+/*CSS FOR CARDS*/
+
+.input-article {
+	margin: 0 auto;
+	width: 400px;
+	background-color: white;
+}
+
+
+.content-column {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.custom-card-style {
+	margin: 10px 0px;
+	transition: all 0.3s ease-in-out;
+
+}
+
+.custom-card-style--added {
+	 -webkit-animation: pulsate 1s ease-out;
+}
+
+@-webkit-keyframes pulsate {
+    0% {background-color: white;}
+    50% {background-color: pink;}
+    100% {background-color: white}
+}
