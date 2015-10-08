@@ -14,89 +14,47 @@
 	<div id="shanak-styles">
 	<div id="content"> </div>
 
-		
-
-	<script id="signin" type="underscore/template">
-	<!-- This is the start of the sign in form -->
-	<div class ='form'>
-			<!-- This is the header of the sign in form -->
-			<div class="form__header">Sign In</div>
-			<!--This contains the enter email and password fields -->
-			<div class="form__login">
-				<div class="form-group">
-					<label for="usr">Enter Email:</label>
-					<input type="text" class="form-control" placeholder="Enter your email address" id="usr">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" placeholder="Enter your password" id="pwd">
-				</div>
-
-			</div>
-
-			<!-- This contains the sign up button and the new?register text link -->
-			<div class="form__submit clearfix">	
-				<div class = "form__signin__signinlink"><a href="#signup">Need an account? Register<a></div>
-				<button class = "btn-primary form__signin__button" > <a class="form--white" href="#user">Sign In<a></button>
-			</div>
-	 </div> <!--End of form -->
-
-	</script>
 
 	<script id="signup" type="underscore/template">
 		<!-- This is the start of the sign up form -->
 
+		<header class = 'header'> 
+			<div class = 'logo'> 
+				Mercury
+			</div>
+		</header>
+
 		<div class ='form'>
-			
-			<!-- This is the header of the sign up form -->
-			<div class="form__header">Register</div>
-			
-			<!--This contains the enter email and password fields -->
-			<div class="form__login">
-				<div class="form-group">
-					<label for="usr">Enter Email:</label>
-					<input type="text" class="form-control" placeholder="Enter your email address" id="usr">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" placeholder="Enter your password" id="pwd">
-				</div>
-				<!--<div class="form-group">
-					<label for="pwd">Re-enter Password:</label>
-					<input type="password" class="form-control" placeholder="Re-enter your password" id="pwd">
-				</div> -->
+			<div class = 'tagline'>
+				Save and organize the articles you love - forever. 
 			</div>
-				<!-- This contains the sign up button and the new?register text link -->
-			<div class="form__submit clearfix">	
-				<div class = "form__signin__signinlink"> <a href="#signin">Existing user? Sign in!<a></div>
-				<button class = "btn-primary form__signin__button"> <a class="form--white js-authenticate"href="#user">Register<a></button>
+
+			<div class = "signin__button">
+				<button class = " btn-primary form__signin__button"> <a class="form--white js-authenticate"href="#user"><img class='twitter-logo' src="assets/twitter.gif" alt=""> Sign In with Twitter<a>
+				</button>
 			</div>
+
 		</div> <!--End of form -->
 
 	</script>
 
 	<script id="user" type="underscore/template">
 		<div class="content-column">
+			<div class='header-title'>
+				<h1>Your Profile</h1>
+				<h3><a href="#feed">Public Feed<a></h3>
+			</div>
+		
 			<div class="input-article form-group">
-				
 				<div class="input-group">
-					<label for="pwd">Enter your articles</label>
-					<input type="text" class="form-control js-article-title" placeholder="Re-enter your password" id="pwd">
-				</div> 
-				<br/>
-
-				<div class="input-group">
-					<label for="pwd">Enter your article URL</label>
-				  <input type="text" class="form-control js-article-url" placeholder="Enter your article's url" aria-describedby="basic-addon2">
+					<h5>Save an Article</h5>
+					<input type="text" class="form-control js-article-title-submit" placeholder="Enter your article title" id="pwd">
+				  	<input type="text" class="form-control js-article-url-submit" placeholder="Enter your article URL" aria-describedby="basic-addon2">
+				  	<div class="submit-button">
+						<input type="submit" class="js-add-article-submit" value="Submit">
+					</div>
 				</div>
-				<br/>
-
-				<div class="input-group">
-					<input type="submit" class="form-control js-add-article" value="Submit">
-				</div>
-
 			</div> 
-
 			<div class="js-card-holder"></div>
 
 			
@@ -110,6 +68,19 @@
 		  </div>
 		</div>
 	</script>
+
+	<script id="feed" type="underscore/template">
+		<div class="content-column">
+			<div class='header-title'>
+				<h1>Public Feed</h1>
+				<h3><a href="javascript:history.back()">Your Profile</a></h3>
+			</div>
+			<div class="js-card-holder"></div>
+		</div>
+
+	</script>
+
+
 
 	<!-- jQuery -->
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
@@ -140,9 +111,14 @@
     <script src="javascript/views/signin.js"></script>
     <script src="javascript/views/signup.js"></script>
     <script src="javascript/views/user.js"></script>
+    <script src="javascript/views/feed.js"></script>
 
     <!-- APP -->
     <script src='javascript/main.js'></script>
    </div>
 </body>
 </html>
+
+<!-- 
+				<label for="pwd">Enter your Article Title</label>
+					<label for="pwd">Enter your Article URL</label> -->

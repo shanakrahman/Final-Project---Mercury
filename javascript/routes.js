@@ -1,4 +1,7 @@
 // var Router = require('director').Router;
+// We want to make Routes public and accessible globally
+// **Q** why is routes written differently than Firebasehandler and all the views
+// var SignUp = (function() {})();?
 
 var Routes = {};
 
