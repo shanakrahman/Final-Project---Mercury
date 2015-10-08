@@ -4,10 +4,121 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0;'>
     <title >Mercury</title>
     <link rel='stylesheet' href='styles/reset.css'>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel='stylesheet' href='styles/main.css'>
+   
 </head>
 <body>
+	<div id="shanak-styles">
+	<div id="content"> </div>
+
+
+	<script id="signup" type="underscore/template">
+		<!-- This is the start of the sign up form -->
+
+		<header class = 'header'> 
+			<div class = 'logo'> 
+				Mercury
+			</div>
+		</header>
+
+		<div class ='form'>
+			<div class = 'tagline'>
+				Save and organize the articles you love - forever. 
+			</div>
+
+			<div class = "signin__button">
+				<button class = " btn-primary form__signin__button"> <a class="form--white js-authenticate"href="#user"><img class='twitter-logo' src="assets/twitter.gif" alt=""> Sign In with Twitter<a>
+				</button>
+			</div>
+
+		</div> <!--End of form -->
+
+	</script>
+
+	<script id="user" type="underscore/template">
+		<div class="content-column">
+			<div class='header-title'>
+				<h1>Your Profile</h1>
+				<h3><a href="#feed">Public Feed<a></h3>
+			</div>
+		
+			<div class="input-article form-group">
+				<div class="input-group">
+					<h5>Save an Article</h5>
+					<input type="text" class="form-control js-article-title-submit" placeholder="Enter your article title" id="pwd">
+				  	<input type="text" class="form-control js-article-url-submit" placeholder="Enter your article URL" aria-describedby="basic-addon2">
+				  	<div class="submit-button">
+						<input type="submit" class="js-add-article-submit" value="Submit">
+					</div>
+				</div>
+			</div> 
+			<div class="js-card-holder"></div>
+
+			
+		<div>
+	</script>
+
+	<script id="card" type="underscore/template">
+		<div class="demo-card-wide mdl-card mdl-shadow--2dp custom-card-style">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text"><a href="<%= url %>" target="_blank"><%= title %></a></h2>
+		  </div>
+		</div>
+	</script>
+
+	<script id="feed" type="underscore/template">
+		<div class="content-column">
+			<div class='header-title'>
+				<h1>Public Feed</h1>
+				<h3><a href="javascript:history.back()">Your Profile</a></h3>
+			</div>
+			<div class="js-card-holder"></div>
+		</div>
+
+	</script>
+
+
+
+	<!-- jQuery -->
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!--MDL-->
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+
+
+    <!-- underscore -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+    
+    <!-- firebase -->
+     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+     <script src="javascript/firebase-handler.js"></script>
+
+     <!-- CONFIGS -->
+     <script src="javascript/fireconfig.js"></script>
+
+    <!-- ROUTING -->
+    <script src="javascript/director.min.js"></script>
+    <script src="javascript/routes.js"></script>
+
+    <!-- Views -->
+    <script src="javascript/views/signin.js"></script>
+    <script src="javascript/views/signup.js"></script>
+    <script src="javascript/views/user.js"></script>
+    <script src="javascript/views/feed.js"></script>
+
+    <!-- APP -->
     <script src='javascript/main.js'></script>
+   </div>
 </body>
 </html>
+
+<!-- 
+				<label for="pwd">Enter your Article Title</label>
+					<label for="pwd">Enter your Article URL</label> -->
